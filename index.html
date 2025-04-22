@@ -87,7 +87,7 @@ overflow-x: hidden;
     }
 
     .estrella {
-      animation: parpadear 1s infinite ease-in-out alternate;
+      animation: parpadear 0.5s infinite ease-in-out alternate;
     }
     button {
   margin-top: 6px; /* Ajustá acá según lo alto que querés que suba */
@@ -192,7 +192,7 @@ overflow-x: hidden;
 
     document.addEventListener("DOMContentLoaded", () => {
       // clonar estrellas fugaces
-      for (let i = 0; i < 25; i++) {
+      for (let i = 0; i < 100; i++) {
         const estrella = document.createElement("div");
         estrella.className = "estrella-fugaz";
         estrella.style.top = Math.random() * 100 + "%";
@@ -200,7 +200,7 @@ overflow-x: hidden;
         document.querySelector(".estrellas-fugaces").appendChild(estrella);
       }
    // Estrellas normales (fijas)
-      for (let i = 0; i < 50; i++) {
+      for (let i = 0; i < 100; i++) {
         const estrella = document.createElement("div");
         estrella.className = "estrella";
         estrella.style.top = Math.random() * 100 + "%";
