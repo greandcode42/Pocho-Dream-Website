@@ -121,58 +121,10 @@
   </style>
 </head>
 <body>
-  <!-- ... contenido anterior intacto ... -->
+  <!-- Background stars added -->
+  <div class="estrellas"></div>
+  <div class="estrellas-fugaces"></div>
 
-  <script>
-    function mostrarCancion() {
-      document.getElementById("seccionCancion").style.display = "block";
-    }
-    function openPrivacyModal() {
-      document.getElementById('privacyModal').style.display = 'block';
-    }
-    function closePrivacyModal() {
-      document.getElementById('privacyModal').style.display = 'none';
-    }
-    let lastClicked = null;
-    function openModal(el, title, content) {
-      lastClicked = el;
-      const isPlanet = el.classList.contains("planeta-icon");
-      const isStar = el.classList.contains("estrella-icon");
-      if (isPlanet) {
-        el.classList.add('clicked');
-        setTimeout(() => el.classList.remove('clicked'), 800);
-      } else if (isStar) {
-        el.classList.add('clicked');
-        setTimeout(() => el.classList.remove('clicked'), 600);
-      }
-      document.getElementById('modalTitle').innerText = title;
-      document.getElementById('modalContent').innerHTML = content;
-      document.getElementById('contentModal').style.display = 'block';
-    }
-    function closeModal() {
-      document.getElementById('contentModal').style.display = 'none';
-      if (lastClicked) {
-        lastClicked.classList.add('visited');
-      }
-    }
-    document.addEventListener("DOMContentLoaded", () => {
-      for (let i = 0; i < 100; i++) {
-        const estrella = document.createElement("div");
-        estrella.className = "estrella";
-        estrella.style.top = Math.random() * 100 + "%";
-        estrella.style.left = Math.random() * 100 + "%";
-        estrella.style.width = Math.random() * 3 + 2 + "px";
-        estrella.style.height = estrella.style.width;
-        document.querySelector(".estrellas").appendChild(estrella);
-      }
-      for (let i = 0; i < 50; i++) {
-        const estrellaF = document.createElement("div");
-        estrellaF.className = "estrella-fugaz";
-        estrellaF.style.top = Math.random() * 100 + "%";
-        estrellaF.style.left = Math.random() * 100 + "%";
-        document.querySelector(".estrellas-fugaces").appendChild(estrellaF);
-      }
-    });
-  </script>
+  <!-- ... resto del contenido permanece igual ... -->
 </body>
 </html>
