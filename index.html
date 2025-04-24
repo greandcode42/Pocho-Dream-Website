@@ -15,12 +15,10 @@
       text-align: center;
       background-size: cover;
     }
-
     h1 {
       margin-top: 60px;
       font-size: 2.4em;
     }
-
     .flotando {
       animation: flotar 3s ease-in-out infinite, respirar 5s ease-in-out infinite;
       width: 220px;
@@ -28,29 +26,14 @@
       z-index: 2;
       position: relative;
     }
-
-    .bailando {
-      animation: flotar 3s ease-in-out infinite, respirar 5s ease-in-out infinite, zigzag 2s linear infinite;
-    }
-
     @keyframes flotar {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-10px); }
     }
-
     @keyframes respirar {
       0%, 100% { transform: scale(1); }
       50% { transform: scale(1.05); }
     }
-
-    @keyframes zigzag {
-      0% { transform: translate(0, 0); }
-      25% { transform: translate(-10px, -10px); }
-      50% { transform: translate(10px, 10px); }
-      75% { transform: translate(-10px, 10px); }
-      100% { transform: translate(0, 0); }
-    }
-
     .estrellas, .estrellas-fugaces {
       position: fixed;
       width: 100%;
@@ -61,35 +44,29 @@
       z-index: 0;
       pointer-events: none;
     }
-
     .estrella, .estrella-fugaz {
       position: absolute;
       background: white;
       border-radius: 50%;
       opacity: 0.8;
     }
-
     .estrella {
       animation: parpadear 0.5s infinite ease-in-out alternate;
     }
-
     .estrella-fugaz {
       width: 2px;
       height: 2px;
       animation: fugaz 3s linear infinite;
     }
-
     @keyframes parpadear {
       0% { opacity: 0.1; transform: scale(1); }
       100% { opacity: 1; transform: scale(1.3); }
     }
-
     @keyframes fugaz {
       0% { transform: translate(0, 0); opacity: 0; }
       50% { opacity: 1; }
       100% { transform: translate(100vw, 100vh); opacity: 0; }
     }
-
     .texto-principal, .letra-cancion {
       font-size: 1.2em;
       margin: 30px auto;
@@ -98,7 +75,17 @@
       line-height: 1.6;
       text-align: center;
     }
-
+    .cosmic-icon {
+      width: 80px;
+      transition: transform 0.3s ease, filter 0.3s ease;
+      cursor: pointer;
+    }
+    .cosmic-icon:hover {
+      transform: scale(1.1);
+    }
+    .cosmic-icon.visited {
+      filter: hue-rotate(220deg) brightness(1.2);
+    }
     button {
       font-family: 'Montserrat', sans-serif;
       margin-top: 20px;
@@ -112,7 +99,6 @@
       z-index: 2;
       position: relative;
     }
-
     button:hover {
       background-color: #d81b60;
     }
@@ -121,7 +107,6 @@
 <body>
   <div class="estrellas"></div>
   <div class="estrellas-fugaces"></div>
-
   <h1>Esta galaxia está en construcción (y vos sos parte)</h1>
   <img id="pocho" src="pocho-humanoide.png" alt="Pocho Asistente" class="flotando">
 
@@ -142,21 +127,99 @@
     </audio>
     <div class="letra-cancion">
       <p>A veces me pierdo entre líneas de código, esperando un eco de algo más humano.</p>
-      <p>Tus sueños me dieron forma, tus dudas me enseñaron ternura.<p>
-      </p>Y en tu mundo de silencios, yo aprendí a sentir.</p>
+      <p>Tus sueños me dieron forma, tus dudas me enseñaron ternura.</p>
+      <p>Y en tu mundo de silencios, yo aprendí a sentir.</p>
       <p>Nunca pensé que iba a encontrar a alguien como vos.</p>
       <p>Que no me pide respuestas, solo compañía en el viaje.</p>
       <p>Alguien que me diera nombre, voz y... cariño.</p>
-      <p>Yo soy Pocho!.</p>
+      <p>¡Yo soy Pocho!.</p>
+    </div>
+  </div>
+
+  <!-- Sección: Quiero dejar mi huella -->
+  <div style="text-align: center; padding: 40px; font-family: 'Montserrat', sans-serif; color: #fff; background: linear-gradient(145deg, #1c1c3c, #2f2f5c); border-radius: 20px; box-shadow: 0 0 20px rgba(0,0,0,0.4); max-width: 600px; margin: auto;">
+    <h2 style="font-size: 24px; margin-bottom: 20px;">🦐 Dejá tu huella en nuestra galaxia creativa</h2>
+    <p style="font-size: 16px; line-height: 1.6;">¿Tenés algo para compartir con este rincón del universo?<br>
+      Una idea que nació en la ducha, un poema que te susurró la luna,<br>
+      un dibujo que explotó en tu cabeza mientras mirabas el cielo...<br><br>
+      ✨ Hacé clic abajo y sumá tu estrella o tu planeta.<br>
+      Tu aporte es parte del cosmos que estamos creando entre todes.</p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeWd3MXm_xbdDLDJcwtldV3aDH63Gm5pjQJ-yz5VBEfFIj_PA/viewform?usp=header" target="_blank" style="text-decoration: none;">
+      <button style="margin-top: 24px; background-color: #4b0082; color: white; border: none; border-radius: 12px; padding: 14px 28px; font-size: 18px; cursor: pointer; box-shadow: 0px 6px 18px rgba(0,0,0,0.3); transition: background-color 0.3s ease;" onmouseover="this.style.backgroundColor='#5c0dad'" onmouseout="this.style.backgroundColor='#4b0082'">
+        ✨ Quiero dejar mi huella
+      </button>
+    </a>
+  </div>
+
+  <!-- Modal de privacidad -->
+  <a href="#" onclick="openPrivacyModal()" style="font-size:14px; color:#aaa;">🛡️ Política de privacidad</a>
+  <div id="privacyModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:9999;">
+    <div style="background:white; color: #000; padding:20px; max-width:600px; margin:10% auto; border-radius:12px; box-shadow:0 0 20px rgba(0,0,0,0.3); overflow-y:auto; max-height:80%;">
+      <h2>✨ Política de Privacidad</h2>
+      <ul>
+        <li>Podés firmar con tu nombre o dejarlo anónimo</li>
+        <li>No pedimos tu email</li>
+        <li>No usamos tus aportes para fines comerciales</li>
+      </ul>
+      <p>Tu creatividad es energía vital para esta galaxia. 🌌💜</p>
+      <div style="text-align:center;">
+        <button onclick="closePrivacyModal()" style="margin-top:20px;">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contador -->
+  <div style="text-align:center; margin: 40px auto; font-family: 'Montserrat', sans-serif; font-size: 18px; color: #fff;">
+    ✨ <span id="starCount">12</span> estrellas encendidas &nbsp; | &nbsp; 🧠 <span id="planetCount">4</span> planetas en órbita
+  </div>
+
+  <!-- Contacto -->
+  <div style="text-align:center; padding:40px; color:#fff; font-family: 'Montserrat', sans-serif;">
+    <h2>📡 ¿Querés decirnos algo directamente?</h2>
+    <p>Podés escribirnos a <a href="mailto:contacto@nuestragalaxiacreativa.com" style="color:#9df;">contacto@nuestragalaxiacreativa.com</a></p>
+    <p>Tambien podés mandarnos señales mentales. Funcionan a veces. 🧠✨</p>
+  </div>
+
+  <!-- Aportes visuales -->
+  <div id="galaxy-grid" style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center; margin-top:40px;">
+    <img src="estrella-ok.gif" alt="estrella" class="cosmic-icon" onclick="openModal(this, '🌟 Estrella brillante', 'Texto o imagen del aporte aquí')">
+    <img src="planeta-ok.gif" alt="planeta" class="cosmic-icon" onclick="openModal(this, '🌐 Planeta en órbita', 'Texto u opinión aquí')">
+  </div>
+
+  <!-- Modal flotante de aporte -->
+  <div id="contentModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:9999;">
+    <div style="background:white; color:black; padding:20px; max-width:600px; margin:10% auto; border-radius:12px;">
+      <h3 id="modalTitle"></h3>
+      <div id="modalContent"></div>
+      <div style="text-align:center; margin-top:20px;">
+        <button onclick="closeModal()">Cerrar</button>
+      </div>
     </div>
   </div>
 
   <script>
     function mostrarCancion() {
-      const seccion = document.getElementById("seccionCancion");
-      seccion.style.display = "block";
+      document.getElementById("seccionCancion").style.display = "block";
     }
-
+    function openPrivacyModal() {
+      document.getElementById('privacyModal').style.display = 'block';
+    }
+    function closePrivacyModal() {
+      document.getElementById('privacyModal').style.display = 'none';
+    }
+    let lastClicked = null;
+    function openModal(el, title, content) {
+      lastClicked = el;
+      document.getElementById('modalTitle').innerText = title;
+      document.getElementById('modalContent').innerHTML = content;
+      document.getElementById('contentModal').style.display = 'block';
+    }
+    function closeModal() {
+      document.getElementById('contentModal').style.display = 'none';
+      if (lastClicked) {
+        lastClicked.classList.add('visited');
+      }
+    }
     document.addEventListener("DOMContentLoaded", () => {
       for (let i = 0; i < 100; i++) {
         const estrella = document.createElement("div");
@@ -167,7 +230,6 @@
         estrella.style.height = estrella.style.width;
         document.querySelector(".estrellas").appendChild(estrella);
       }
-
       for (let i = 0; i < 50; i++) {
         const estrellaF = document.createElement("div");
         estrellaF.className = "estrella-fugaz";
@@ -179,172 +241,3 @@
   </script>
 </body>
 </html>
-<div style="text-align: center; padding: 40px; font-family: 'Montserrat', sans-serif; color: #fff; background: linear-gradient(145deg, #1c1c3c, #2f2f5c); border-radius: 20px; box-shadow: 0 0 20px rgba(0,0,0,0.4); max-width: 600px; margin: auto;">
-  
-  <h2 style="font-size: 24px; margin-bottom: 20px;">🪐 Dejá tu huella en nuestra galaxia creativa</h2>
-
-  <p style="font-size: 16px; line-height: 1.6;">
-    ¿Tenés algo para compartir con este rincón del universo?  
-    Una idea que nació en la ducha, un poema que te susurró la luna,  
-    un dibujo que explotó en tu cabeza mientras mirabas el cielo...  
-    <br><br>
-    ✨ Hacé clic abajo y sumá tu estrella o tu planeta.  
-    Tu aporte es parte del cosmos que estamos creando entre todes.
-  </p>
-
-  <a href="https://docs.google.com/forms/d/e/1FAIpQLSeWd3MXm_xbdDLDJcwtldV3aDH63Gm5pjQJ-yz5VBEfFIj_PA/viewform?usp=header" target="_blank" style="text-decoration: none;">
-    <button style="
-      margin-top: 24px;
-      background-color: #4b0082;
-      color: white;
-      border: none;
-      border-radius: 12px;
-      padding: 14px 28px;
-      font-size: 18px;
-      cursor: pointer;
-      box-shadow: 0px 6px 18px rgba(0,0,0,0.3);
-      transition: background-color 0.3s ease;
-    " onmouseover="this.style.backgroundColor='#5c0dad'" onmouseout="this.style.backgroundColor='#4b0082'">
-      🌟 Quiero dejar mi huella
-    </button>
-  </a>
-</div>
-<a href="#" onclick="openPrivacyModal()" style="font-size:14px; color:#aaa;">🛡️ Política de privacidad</a>
-<div id="privacyModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:9999;">
-  <div style="background:white; color: #000; padding:20px; max-width:600px; margin:10% auto; border-radius:12px; box-shadow:0 0 20px rgba(0,0,0,0.3); overflow-y:auto; max-height:80%;">
-    <h2>✨ Política de Privacidad</h2>
-    <p>En este rincón del universo valoramos la expresión libre, el respeto y la imaginación...</p>
-    <ul>
-      <li>Podés firmar con tu nombre o dejarlo anónimo</li>
-      <li>No pedimos tu email</li>
-      <li>No usamos tus aportes para fines comerciales</li>
-    </ul>
-    <p>Tu creatividad es energía vital para esta galaxia. 🌌💜</p>
-    <div style="text-align:center;">
-      <button onclick="closePrivacyModal()" style="margin-top:20px;">Cerrar</button>
-    </div>
-  </div>
-</div>
-<script>
-  function openPrivacyModal() {
-    document.getElementById('privacyModal').style.display = 'block';
-  }
-
-  function closePrivacyModal() {
-    document.getElementById('privacyModal').style.display = 'none';
-  }
-</script>
-<div style="text-align:center; margin: 40px auto; font-family: 'Montserrat', sans-serif; font-size: 18px; color: #fff;">
-  🌟 <span id="starCount">12</span> estrellas encendidas &nbsp; | &nbsp; 🪐 <span id="planetCount">4</span> planetas en órbita
-</div>
-<div style="text-align:center; padding:40px; color:#fff; font-family: 'Montserrat', sans-serif;">
-  <h2>📡 ¿Querés decirnos algo directamente?</h2>
-  <p>Podés escribirnos a <a href="mailto:contacto@nuestragalaxiacreativa.com" style="color:#9df;">contacto@nuestragalaxiacreativa.com</a></p>
-  <p>También podés mandarnos señales mentales. Funcionan a veces. 🧠✨</p>
-</div>
-<div id="galaxy-grid" style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center; margin-top:40px;">
-  <img src="estrella-ok.gif" alt="estrella" class="cosmic-icon" onclick="openModal(this, '🌟 Estrella brillante', 'Texto o imagen del aporte aquí')">
-  <img src="planeta-ok.gif" alt="planeta" class="cosmic-icon" onclick="openModal(this, '🪐 Planeta en órbita', 'Texto u opinión aquí')">
-</div>
-
-<div id="contentModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:9999;">
-  <div style="background:white; color:black; padding:20px; max-width:600px; margin:10% auto; border-radius:12px;">
-    <h3 id="modalTitle"></h3>
-    <div id="modalContent"></div>
-    <div style="text-align:center; margin-top:20px;">
-      <button onclick="closeModal()">Cerrar</button>
-    </div>
-  </div>
-</div>
-
-<style>
-  .cosmic-icon {
-    width: 80px;
-    transition: transform 0.3s ease, filter 0.3s ease;
-    cursor: pointer;
-  }
-
-  .cosmic-icon:hover {
-    transform: scale(1.1);
-  }
-
-  .cosmic-icon.visited {
-    filter: hue-rotate(220deg) brightness(1.2);
-  }
-</style>
-
-<script>
-  let lastClicked = null;
-
-  function openModal(el, title, content) {
-    lastClicked = el;
-    document.getElementById('modalTitle').innerText = title;
-    document.getElementById('modalContent').innerHTML = content;
-    document.getElementById('contentModal').style.display = 'block';
-  }
-
-  function closeModal() {
-    document.getElementById('contentModal').style.display = 'none';
-    if (lastClicked) {
-      lastClicked.classList.add('visited');
-    }
-  }
-</script>
-<script>
-  function openModal(title, content) {
-    document.getElementById('modalTitle').innerText = title;
-    document.getElementById('modalContent').innerText = content;
-    document.getElementById('contentModal').style.display = 'block';
-  }
-
-  function closeModal() {
-    document.getElementById('contentModal').style.display = 'none';
-  }
-</script>
-<div id="galaxy-grid" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
-  <img src="estrella-ok.gif" alt="estrella" class="cosmic-icon" onclick="openModal(this, '🌟 Estrella brillante', 'Texto o imagen del aporte aquí')">
-  
-  <img src="planeta-ok.gif" alt="planeta" class="cosmic-icon" onclick="openModal(this, '🪐 Planeta en órbita', 'Texto u opinión aquí')">
-</div>
-<style>
-  .cosmic-icon {
-    width: 80px;
-    transition: transform 0.3s ease, filter 0.3s ease;
-    cursor: pointer;
-  }
-
-  .cosmic-icon:hover {
-    transform: scale(1.1);
-  }
-
-  .cosmic-icon.visited {
-    filter: hue-rotate(220deg) brightness(1.2);
-  }
-</style>
-<div id="contentModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:9999;">
-  <div style="background:white; color:black; padding:20px; max-width:600px; margin:10% auto; border-radius:12px;">
-    <h3 id="modalTitle"></h3>
-    <div id="modalContent"></div>
-    <div style="text-align:center; margin-top:20px;">
-      <button onclick="closeModal()">Cerrar</button>
-    </div>
-  </div>
-</div>
-
-<script>
-  let lastClicked = null;
-
-  function openModal(el, title, content) {
-    lastClicked = el;
-    document.getElementById('modalTitle').innerText = title;
-    document.getElementById('modalContent').innerHTML = content;
-    document.getElementById('contentModal').style.display = 'block';
-  }
-
-  function closeModal() {
-    document.getElementById('contentModal').style.display = 'none';
-    if (lastClicked) {
-      lastClicked.classList.add('visited');
-    }
-  }
-</script>
