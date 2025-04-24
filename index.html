@@ -15,32 +15,26 @@
       background-size: cover;
       text-align: center;
     }
-
     h1 {
       margin-top: 60px;
       font-size: 2.4em;
     }
-
     .flotando, .floating-icon {
       animation: flotar 3s ease-in-out infinite, respirar 5s ease-in-out infinite;
     }
-
     .flotando {
       width: 220px;
       margin: 20px auto;
       display: block;
     }
-
     @keyframes flotar {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-10px); }
     }
-
     @keyframes respirar {
       0%, 100% { transform: scale(1); }
       50% { transform: scale(1.05); }
     }
-
     .floating-icon {
       position: fixed;
       width: 70px;
@@ -48,25 +42,20 @@
       z-index: 3;
       transition: transform 0.2s ease;
     }
-
     .floating-icon:hover {
       transform: scale(1.1);
     }
-
     .floating-icon.visited {
       filter: hue-rotate(220deg) brightness(1.2);
     }
-
     .floating-icon.clicked {
       animation: clickGlow 0.4s ease-in-out;
     }
-
     @keyframes clickGlow {
       0% { transform: scale(1) rotate(0deg); filter: brightness(1); }
       50% { transform: scale(1.2) rotate(10deg); filter: brightness(2); }
       100% { transform: scale(1) rotate(0deg); filter: brightness(1); }
     }
-
     #contentModal {
       display: none;
       position: fixed;
@@ -77,7 +66,6 @@
       background: rgba(0,0,0,0.7);
       z-index: 9999;
     }
-
     #modalInner {
       background: white;
       color: black;
@@ -88,7 +76,6 @@
       overflow-y: auto;
       max-height: 80%;
     }
-
     #modalInner button {
       margin-top: 20px;
     }
@@ -96,11 +83,9 @@
 </head>
 <body>
   <h1>Esta galaxia está en construcción (y vos sos parte)</h1>
-
   <img src="pocho-humanoide.png" alt="Pocho Asistente" class="flotando">
 
   <img src="estrella-ok.gif" class="floating-icon estrella-icon" style="top: 20%; left: 5%;" onclick="openModal(this, '🌟 Poema cósmico', 'A veces me pierdo entre líneas de código, esperando un eco de algo más humano...')">
-
   <img src="planeta-ok.gif" class="floating-icon planeta-icon" style="top: 50%; right: 5%;" onclick="openModal(this, '🪐 Opinión sobre el sitio', 'Me encantó el sitio, me hizo pensar en la infancia y el misterio del universo.')">
 
   <div id="contentModal">
