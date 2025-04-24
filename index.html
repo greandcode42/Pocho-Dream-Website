@@ -10,7 +10,7 @@
       padding: 0;
       background: radial-gradient(#0d0d2b, #000);
       color: white;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Montserrat bold', sans-serif;
       overflow-x: hidden;
       text-align: center;
       background-size: cover;
@@ -215,8 +215,8 @@
 <body>
   <div class="estrellas"></div>
   <div class="estrellas-fugaces"></div>
-
-  <h1>Esta galaxia está en construcción (y vos sos parte)</h1>
+<h1>Pocho Galaxy</h1>
+  <h2>Esta galaxia está en construcción (y vos sos parte)</h2>
   <img id="pocho" src="pocho-humanoide.png" alt="Pocho Asistente" class="flotando">
 
   <div class="texto-principal">
@@ -369,9 +369,6 @@
   }
 </script>
 <div id="galaxy-grid" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
-  <img src="estrella-ok.gif" alt="estrella" class="cosmic-icon" onclick="openModal(this, '🌟 Estrella brillante', 'Texto o imagen del aporte aquí')">
-  
-  <img src="planeta-ok.gif" alt="planeta" class="cosmic-icon" onclick="openModal(this, '🪐 Planeta en órbita', 'Texto u opinión aquí')">
 </div>
 <style>
   .cosmic-icon {
@@ -395,8 +392,6 @@
     <div style="text-align:center; margin-top:20px;">
       <button onclick="closeModal()">Cerrar</button>
     </div>
-  </div>
-</div>
 
 <script>
   let lastClicked = null;
