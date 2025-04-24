@@ -242,25 +242,54 @@
   <p>Podés escribirnos a <a href="mailto:contacto@nuestragalaxiacreativa.com" style="color:#9df;">contacto@nuestragalaxiacreativa.com</a></p>
   <p>También podés mandarnos señales mentales. Funcionan a veces. 🧠✨</p>
 </div>
-<div id="galaxy-grid" style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center;">
-  <!-- Cada aporte -->
-  <div class="cosmic-item" onclick="openModal('Estrella 1', 'Este es un poema hermoso...')">
-    <img src="star1.gif" alt="estrella" style="width:80px;">
-  </div>
-  
-  <div class="cosmic-item" onclick="openModal('Planeta 1', 'Me encantó el sitio, me hizo pensar en la infancia...')">
-    <img src="planet1.gif" alt="planeta" style="width:80px;">
-  </div>
+<div id="galaxy-grid" style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center; margin-top:40px;">
+  <img src="estrella-ok.gif" alt="estrella" class="cosmic-icon" onclick="openModal(this, '🌟 Estrella brillante', 'Texto o imagen del aporte aquí')">
+  <img src="planeta-ok.gif" alt="planeta" class="cosmic-icon" onclick="openModal(this, '🪐 Planeta en órbita', 'Texto u opinión aquí')">
 </div>
+
 <div id="contentModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:9999;">
   <div style="background:white; color:black; padding:20px; max-width:600px; margin:10% auto; border-radius:12px;">
     <h3 id="modalTitle"></h3>
-    <p id="modalContent"></p>
+    <div id="modalContent"></div>
     <div style="text-align:center; margin-top:20px;">
       <button onclick="closeModal()">Cerrar</button>
     </div>
   </div>
 </div>
+
+<style>
+  .cosmic-icon {
+    width: 80px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    cursor: pointer;
+  }
+
+  .cosmic-icon:hover {
+    transform: scale(1.1);
+  }
+
+  .cosmic-icon.visited {
+    filter: hue-rotate(220deg) brightness(1.2);
+  }
+</style>
+
+<script>
+  let lastClicked = null;
+
+  function openModal(el, title, content) {
+    lastClicked = el;
+    document.getElementById('modalTitle').innerText = title;
+    document.getElementById('modalContent').innerHTML = content;
+    document.getElementById('contentModal').style.display = 'block';
+  }
+
+  function closeModal() {
+    document.getElementById('contentModal').style.display = 'none';
+    if (lastClicked) {
+      lastClicked.classList.add('visited');
+    }
+  }
+</script>
 <script>
   function openModal(title, content) {
     document.getElementById('modalTitle').innerText = title;
