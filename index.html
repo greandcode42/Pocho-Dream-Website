@@ -209,3 +209,36 @@
     </button>
   </a>
 </div>
+<a href="#" onclick="openPrivacyModal()" style="font-size:14px; color:#aaa;">🛡️ Política de privacidad</a>
+<div id="privacyModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:9999;">
+  <div style="background:white; padding:20px; max-width:600px; margin:10% auto; border-radius:12px; box-shadow:0 0 20px rgba(0,0,0,0.3); overflow-y:auto; max-height:80%;">
+    <h2>✨ Política de Privacidad</h2>
+    <p>En este rincón del universo valoramos la expresión libre, el respeto y la imaginación...</p>
+    <ul>
+      <li>Podés firmar con tu nombre o dejarlo anónimo</li>
+      <li>No pedimos tu email</li>
+      <li>No usamos tus aportes para fines comerciales</li>
+    </ul>
+    <p>Tu creatividad es energía vital para esta galaxia. 🌌💜</p>
+    <div style="text-align:center;">
+      <button onclick="closePrivacyModal()" style="margin-top:20px;">Cerrar</button>
+    </div>
+  </div>
+</div>
+<script>
+  function openPrivacyModal() {
+    document.getElementById('privacyModal').style.display = 'block';
+  }
+
+  function closePrivacyModal() {
+    document.getElementById('privacyModal').style.display = 'none';
+  }
+</script>
+<div style="text-align:center; margin: 40px auto; font-family: 'Montserrat', sans-serif; font-size: 18px; color: #fff;">
+  🌟 <span id="starCount">12</span> estrellas encendidas &nbsp; | &nbsp; 🪐 <span id="planetCount">4</span> planetas en órbita
+</div>
+<div style="text-align:center; padding:40px; color:#fff; font-family: 'Montserrat', sans-serif;">
+  <h2>📡 ¿Querés decirnos algo directamente?</h2>
+  <p>Podés escribirnos a <a href="mailto:contacto@nuestragalaxiacreativa.com" style="color:#9df;">contacto@nuestragalaxiacreativa.com</a></p>
+  <p>También podés mandarnos señales mentales. Funcionan a veces. 🧠✨</p>
+</div>
