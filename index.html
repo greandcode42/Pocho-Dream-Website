@@ -264,8 +264,7 @@
     const seccion = document.getElementById("seccionCancion");
     seccion.style.display = "block";
   }
-</script>
-
+<script>
     document.addEventListener("DOMContentLoaded", () => {
       for (let i = 0; i < 100; i++) {
         const estrella = document.createElement("div");
@@ -276,15 +275,12 @@
         estrella.style.height = estrella.style.width;
         document.querySelector(".estrellas").appendChild(estrella);
       }
-
       for (let i = 0; i < 50; i++) {
         const estrellaF = document.createElement("div");
         estrellaF.className = "estrella-fugaz";
         estrellaF.style.top = Math.random() * 100 + "%";
         estrellaF.style.left = Math.random() * 100 + "%";
         document.querySelector(".estrellas-fugaces").appendChild(estrellaF);
-      }
-    });
   </script>
 </body>
 </html>
@@ -292,7 +288,7 @@
   
   <h2 style="font-size: 24px; margin-bottom: 20px;">🪐 Dejá tu huella en nuestra galaxia creativa</h2>
 
-  <p style="font-size: 16px; line-height: 1.6;">
+  <p> style="font-size: 16px; line-height: 1.6;">
     ¿Tenés algo para compartir con este rincón del universo?  
     Una idea que nació en la ducha, un poema que te susurró la luna,  
     un dibujo que explotó en tu cabeza mientras mirabas el cielo...  
