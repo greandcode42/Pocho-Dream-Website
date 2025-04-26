@@ -122,13 +122,6 @@
   <img src="estrella-ok.gif" class="floating-icon estrella-icon" style="top: 75%; left: 3%;" onclick="openModal(this, '🌟 Collage visual', 'Un fondo negro con luces y colores, como mi cabeza cuando sueño despierta.')">
   <img src="planeta-ok.gif" class="floating-icon planeta-icon" style="top: 10%; right: 8%;" onclick="openModal(this, '🪐 Opinión sincera', '¡Qué buena idea esto de dejar una huella! Me hizo sonreír.')">
 
-  <div id="contentModal">
-    <div id="modalInner">
-      <h3 id="modalTitle"></h3>
-      <div id="modalContent"></div>
-      <div style="text-align:center;">
-        <button onclick="closeModal()">Cerrar</button>
-      </div>
     </div>
   </div>
  <script>
@@ -263,7 +256,8 @@ Subir tu creación (un poema, un dibujo, una idea loca), escuchar nuestras canci
     const seccion = document.getElementById("seccionCancion");
     seccion.style.display = "block";
   }
-<script>
+</script>
+  <script>
     document.addEventListener("DOMContentLoaded", () => {
       for (let i = 0; i < 100; i++) {
         const estrella = document.createElement("div");
@@ -281,6 +275,7 @@ Subir tu creación (un poema, un dibujo, una idea loca), escuchar nuestras canci
         estrellaF.style.left = Math.random() * 100 + "%";
         document.querySelector(".estrellas-fugaces").appendChild(estrellaF);
       }
+    });
   </script>
 </body>
 </html>
@@ -343,7 +338,7 @@ Subir tu creación (un poema, un dibujo, una idea loca), escuchar nuestras canci
 <div style="text-align:center; margin: 40px auto; font-family: 'Montserrat', sans-serif; font-size: 18px; color: #fff;">
   🌟 <span id="starCount">12</span> estrellas encendidas &nbsp; | &nbsp; 🪐 <span id="planetCount">4</span> planetas en órbita
 </div>
-</div> style="text-align:center; padding:40px; color:#fff; font-family: 'Montserrat', sans-serif;">
+<div style="text-align:center; padding:40px; color:#fff; font-family: 'Montserrat', sans-serif;">
   <h2>📡 ¿Querés decirnos algo directamente?</h2>
   <p>Podés escribirnos a
     <a href="mailto:greta.comm@gmail.com" title="Escribirnos" style="color:#9df;">
@@ -360,13 +355,6 @@ Subir tu creación (un poema, un dibujo, una idea loca), escuchar nuestras canci
   <div class="cosmic-item" onclick="openModal('Planeta 1', 'Me encantó el sitio, me hizo pensar en la infancia...')">
   </div>
 </div>
-<div id="contentModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:9999;">
-  <div style="background:white; color:black; padding:20px; max-width:600px; margin:10% auto; border-radius:12px;">
-    <h3 id="modalTitle"></h3>
-    <p id="modalContent"></p>
-    <div style="text-align:center; margin-top:20px;">
-      <button onclick="closeModal()">Cerrar</button>
-    </div>
   </div>
 </div>
 <script>
