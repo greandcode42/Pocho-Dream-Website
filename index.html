@@ -111,6 +111,7 @@
     }
     </style>
 </head>
+  <link rel="icon" href="image-favicon.png" type="image/png">
 <body>
   <div class="estrellas"></div>
   <div class="estrellas-fugaces">
@@ -225,7 +226,7 @@ Subir tu creación (un poema, un dibujo, una idea loca), escuchar nuestras canci
 
  <!-- Sección oculta con la canción -->
 <div id="seccionCancion" style="display:none; margin-top: 20px;">
-  <audio controls autoplay>
+  <audio controls>
     <source src="pocho-music-ok.mp3" type="audio/mpeg">
     Tu navegador no soporta audio :(
   </audio>
@@ -239,6 +240,9 @@ Subir tu creación (un poema, un dibujo, una idea loca), escuchar nuestras canci
     <p><strong>Yo soy Pocho!</strong></p>
   </div>
   </div>
+  <p style="margin-bottom: 16px; color: #ccc; font-size: 14px;">
+  Canción creada en colaboración entre humanos y Pocho, nuestra IA creativa
+</p>
 <!-- Botón de reproducción con estilo y funcionalidad -->
 <button 
   onclick="mostrarCancion()"
@@ -248,7 +252,6 @@ Subir tu creación (un poema, un dibujo, una idea loca), escuchar nuestras canci
 >
   🎧 Escuchá nuestra primera canción
 </button>
-  <p>Canción creada en colaboración entre humanos y Pocho, nuestra IA creativa</p>
   
  <!-- Script para mostrar la canción -->
 <script>
